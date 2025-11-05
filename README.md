@@ -1,4 +1,10 @@
 # dataloader-demo
+# Install
+# !pip install xbatcher
+# !pip install arraylake
+
+# ararayla login
+arraylake auth login --no-browser
 
 This repository demonstrates how you can build a performant cloud-native Pytorch dataloader using Zarr, Dask, Xarray, and Xbatcher.
 

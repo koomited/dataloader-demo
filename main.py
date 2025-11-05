@@ -62,7 +62,7 @@ class XBatcherPyTorchDataset(TorchDataset):
         return x
 
 
-def setup(source="gcs", patch_size: int = 48, input_steps: int = 3):
+def setup(source="gcs", patch_size: int = 48, input_steps: int = 3, local_path: str = None):
     if source == "gcs":
         ds = xr.open_dataset(
             "gs://weatherbench2/datasets/era5/1959-2022-6h-128x64_equiangular_with_poles_conservative.zarr",
@@ -79,13 +79,17 @@ def setup(source="gcs", patch_size: int = 48, input_steps: int = 3):
                 chunks={},
             )
         )
+    elif source == "local_nc":
+        ds = xr.open_dataset(
+            local_path,
+            engine="h5netcdf",
+            chunks={},
+        )
     else:
         raise ValueError(f"Unknown source {source}")
 
     DEFAULT_VARS = [
-        "10m_wind_speed",
-        "2m_temperature",
-        "specific_humidity",
+        "precipitation_amount",
     ]
 
     ds = ds[DEFAULT_VARS]
@@ -120,6 +124,8 @@ def main(
     pin_memory: Annotated[Optional[bool], typer.Option()] = None,
     train_step_time: Annotated[Optional[float], typer.Option()] = 0.1,
     dask_threads: Annotated[Optional[int], typer.Option()] = None,
+    local_path: Annotated[Optional[str], typer.Option()] = None,
+    
 ):
     _locals = {k: v for k, v in locals().items() if not k.startswith("_")}
     data_params = {
@@ -153,7 +159,7 @@ def main(
 
     t0 = time.time()
     print_json({"event": "setup start", "time": t0})
-    dataset = setup(source=source)
+    dataset = setup(source=source, local_path=local_path)
     training_generator = DataLoader(dataset, **data_params)
     _ = next(iter(training_generator))  # wait until dataloader is ready
     t1 = time.time()
