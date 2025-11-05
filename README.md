@@ -18,11 +18,12 @@ python main.py --help
 
 # example 1
 python main.py \
-    --batch-size 4 \
+    --batch-size 2 \
     --num-epochs 3 \
-    --num-batches 500 \
+    --num-batches 20 \
     --shuffle \
-    --source arraylake > logs-blog/fig2-log.txt
+    --source "local_nc" \
+    --local-path ../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc > logs-blog/fig2-log.txt
 
 # example 2
 python main.py \

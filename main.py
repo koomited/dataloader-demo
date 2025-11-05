@@ -170,6 +170,7 @@ def main(
         print_json({"event": "epoch start", "epoch": epoch, "time": e0})
 
         for i, sample in enumerate(training_generator):
+            print(sample)
             tt0 = time.time()
             print_json({"event": "training start", "batch": i, "time": tt0})
             time.sleep(train_step_time)  # simulate model training
