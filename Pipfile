@@ -20,8 +20,10 @@ dask = "*"
 xbatcher = "*"
 cachey = "*"
 h5netcdf = "*"
+gcsfs = "*"
 
 [dev-packages]
+ipython = "*"
 
 [requires]
 python_version = "3.12"

@@ -43,12 +43,17 @@ class XBatcherPyTorchDataset(TorchDataset):
         )
         # load before stacking
         batch = self.bgen[idx].load()
+        times = batch["time"].values  
 
         # Use to_stacked_array to stack without broadcasting,
         stacked = batch.to_stacked_array(
             new_dim="batch", sample_dims=("time", "longitude", "latitude")
         ).transpose("time", "batch", ...)
         x = torch.tensor(stacked.data)
+        # x = dict(
+        #     times = times,
+        #     data = x
+        #     )
         t1 = time.time()
         print_json(
             {
@@ -62,7 +67,7 @@ class XBatcherPyTorchDataset(TorchDataset):
         return x
 
 
-def setup(source="gcs", patch_size: int = 48, input_steps: int = 3, local_path: str = None):
+def setup(source="gcs", patch_size: int = 4, input_steps: int = 10, local_path: str = None):
     if source == "gcs":
         ds = xr.open_dataset(
             "gs://weatherbench2/datasets/era5/1959-2022-6h-128x64_equiangular_with_poles_conservative.zarr",
@@ -90,12 +95,18 @@ def setup(source="gcs", patch_size: int = 48, input_steps: int = 3, local_path: 
 
     DEFAULT_VARS = [
         "precipitation_amount",
+        # "10m_wind_speed",
+        # "2m_temperature",
+        # "specific_humidity",
     ]
 
     ds = ds[DEFAULT_VARS]
+    
+    num_longitudes = len(ds.longitude) - len(ds.longitude) % patch_size
+    num_latitudes = len(ds.latitude) - len(ds.latitude) % patch_size
     patch = dict(
-        latitude=patch_size,
-        longitude=patch_size,
+        latitude=num_latitudes,
+        longitude=num_longitudes,
         time=input_steps,
     )
     overlap = dict(latitude=32, longitude=32, time=input_steps // 3 * 2)
@@ -106,6 +117,7 @@ def setup(source="gcs", patch_size: int = 48, input_steps: int = 3, local_path: 
         input_overlap=overlap,
         preload_batch=False,
     )
+    
 
     dataset = XBatcherPyTorchDataset(bgen)
 
@@ -170,7 +182,11 @@ def main(
         print_json({"event": "epoch start", "epoch": epoch, "time": e0})
 
         for i, sample in enumerate(training_generator):
-            print(sample)
+            # input = 
+            times = sample["times"]
+            data = sample["data"]
+            print(times)
+            print(sample.shape)
             tt0 = time.time()
             print_json({"event": "training start", "batch": i, "time": tt0})
             time.sleep(train_step_time)  # simulate model training

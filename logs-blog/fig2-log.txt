@@ -1,2 +1,4 @@
-{"event": "run start", "time": 1762335469.7715225, "data_params": "{'batch_size': 2, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 3, "num_batches": 20, "batch_size": 2, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
-{"event": "setup start", "time": 1762335469.7715452}
+{"event": "run start", "time": 1762357054.991085, "data_params": "{'batch_size': 1, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 1, "num_batches": 1, "batch_size": 1, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
+{"event": "setup start", "time": 1762357054.9911072}
+{"event": "get-batch start", "time": 1762357055.084158, "idx": 14, "pid": 302043}
+{"event": "get-batch end", "time": 1762357055.1074035, "idx": 14, "pid": 302043, "duration": 0.023245573043823242}
