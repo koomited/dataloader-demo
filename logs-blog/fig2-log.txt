@@ -1,4 +1,14 @@
-{"event": "run start", "time": 1762357054.991085, "data_params": "{'batch_size': 1, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 1, "num_batches": 1, "batch_size": 1, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
-{"event": "setup start", "time": 1762357054.9911072}
-{"event": "get-batch start", "time": 1762357055.084158, "idx": 14, "pid": 302043}
-{"event": "get-batch end", "time": 1762357055.1074035, "idx": 14, "pid": 302043, "duration": 0.023245573043823242}
+{"event": "run start", "time": 1762366720.950744, "data_params": "{'batch_size': 1, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 1, "num_batches": 1, "batch_size": 1, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
+{"event": "setup start", "time": 1762366720.9507697}
+{"event": "get-batch start", "time": 1762366721.0627224, "idx": 26, "pid": 338481}
+{"event": "get-batch end", "time": 1762366721.0833883, "idx": 26, "pid": 338481, "duration": 0.020665884017944336}
+{"event": "setup end", "time": 1762366721.0845525, "duration": 0.13378286361694336}
+{"event": "epoch start", "epoch": 0, "time": 1762366721.084587}
+{"event": "get-batch start", "time": 1762366721.0848718, "idx": 7, "pid": 338481}
+{"event": "get-batch end", "time": 1762366721.1056113, "idx": 7, "pid": 338481, "duration": 0.02073955535888672}
+torch.Size([1, 10, 1, 252, 328])
+Input:torch.Size([1, 8, 1, 252, 328])
+{"event": "training start", "batch": 0, "time": 1762366721.1065764}
+{"event": "training end", "batch": 0, "time": 1762366721.2068634, "duration": 0.10028696060180664}
+{"event": "epoch end", "epoch": 0, "time": 1762366721.207047, "duration": 0.12245988845825195}
+{"event": "run end", "time": 1762366721.2070925, "duration": 0.2563486099243164}

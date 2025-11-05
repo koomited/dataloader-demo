@@ -12,6 +12,8 @@ from torch.utils.data import DataLoader
 from torch.utils.data import Dataset as TorchDataset
 from torch import multiprocessing
 from typing_extensions import Annotated
+from torch.utils.data._utils.collate import default_collate
+
 
 from dask.cache import Cache
 
@@ -43,7 +45,7 @@ class XBatcherPyTorchDataset(TorchDataset):
         )
         # load before stacking
         batch = self.bgen[idx].load()
-        times = batch["time"].values  
+        dates = batch["time"].values  
 
         # Use to_stacked_array to stack without broadcasting,
         stacked = batch.to_stacked_array(
@@ -64,7 +66,7 @@ class XBatcherPyTorchDataset(TorchDataset):
                 "duration": t1 - t0,
             }
         )
-        return x
+        return (x, dates)
 
 
 def setup(source="gcs", patch_size: int = 4, input_steps: int = 10, local_path: str = None):
@@ -124,6 +126,17 @@ def setup(source="gcs", patch_size: int = 4, input_steps: int = 10, local_path: 
     return dataset
 
 
+def custom_collate_fn(batch):
+    """
+    Custom collate that keeps datetime64 arrays as-is.
+    """
+    xs, dates = zip(*batch)
+    # Default collate for tensors
+    xs = default_collate(xs)
+    # Keep dates as list or numpy arrays
+    return xs, list(dates)
+
+
 def main(
     source: Annotated[str, typer.Option()] = "arraylake",
     num_epochs: Annotated[int, typer.Option(min=0, max=1000)] = 2,
@@ -171,8 +184,10 @@ def main(
 
     t0 = time.time()
     print_json({"event": "setup start", "time": t0})
-    dataset = setup(source=source, local_path=local_path)
-    training_generator = DataLoader(dataset, **data_params)
+    dataset= setup(source=source, local_path=local_path)
+    # training_generator = DataLoader(dataset, **data_params)
+    training_generator = DataLoader(dataset, collate_fn=custom_collate_fn, **data_params)
+
     _ = next(iter(training_generator))  # wait until dataloader is ready
     t1 = time.time()
     print_json({"event": "setup end", "time": t1, "duration": t1 - t0})
@@ -181,12 +196,14 @@ def main(
         e0 = time.time()
         print_json({"event": "epoch start", "epoch": epoch, "time": e0})
 
-        for i, sample in enumerate(training_generator):
-            # input = 
-            times = sample["times"]
-            data = sample["data"]
-            print(times)
-            print(sample.shape)
+        # for i, sample in enumerate(training_generator):
+        for i, (x, dates) in enumerate(training_generator):
+            print(x.shape)
+            input = x[:, :2, :, :, :]
+            target = x[:, 2:, :, :, :]
+            print(f"Input:{target.shape}")
+            # print(sample)
+            # print(sample.shape)
             tt0 = time.time()
             print_json({"event": "training start", "batch": i, "time": tt0})
             time.sleep(train_step_time)  # simulate model training
