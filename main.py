@@ -47,21 +47,24 @@ def training(model, batch_generator,
         
         
         for i, (x, dates) in enumerate(loop):
-            # print(x.shape)
-            input = x[:, :2, :, :, :]
+            x = x.squeeze(0)
+            input = x[::2, :, :, :]
             input= input.to(device)
             
             # input = input.squeeze(0).squeeze(1)
-            input = input.squeeze(0)
+            # input = input.squeeze(0)
             input = torch.nan_to_num(input, nan=0.0)
             
             
-            target = x[:, 2:, :, :, :]
-            target_for_now = target.squeeze(0)
+            target = x[1::2, :, :, :]
             
-            target_for_now = target_for_now[:2,:,:]
+            print(f"Input shape: {input.shape}")
+            print(f"Target shape: {target.shape}")
+            # target_for_now = target.squeeze(0)
             
-            target_for_now = torch.nan_to_num(target_for_now, nan=0.0)
+            # target_for_now = target_for_now[:2,:,:]
+            
+            target = torch.nan_to_num(target, nan=0.0)
             
             
             # print(f"Input shape:{input.shape}")
@@ -69,7 +72,7 @@ def training(model, batch_generator,
             # predictions = model(input)[0]
             x_recon, mu, sigma = model(input)
             
-            reconst_loss = reconst_loss_fn(x_recon, target_for_now)
+            reconst_loss = reconst_loss_fn(x_recon, target)
             kl_div = -torch.sum(1+torch.log(sigma.pow(2))-mu.pow(2)-sigma.pow(2))
 
             loss = reconst_loss + kl_div
@@ -127,7 +130,7 @@ class XBatcherPyTorchDataset(TorchDataset):
         return (x, dates)
 
 
-def setup(source="gcs", patch_size: int = 4, input_steps: int = 10, local_path: str = None):
+def setup(source="gcs", patch_size: int = 4, input_steps: int = 64, local_path: str = None):
     if source == "gcs":
         ds = xr.open_dataset(
             "gs://weatherbench2/datasets/era5/1959-2022-6h-128x64_equiangular_with_poles_conservative.zarr",
