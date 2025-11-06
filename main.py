@@ -17,10 +17,68 @@ from torch.utils.data._utils.collate import default_collate
 
 from dask.cache import Cache
 
+from model import VariationalAutoEncoder
+from tqdm import tqdm
+from torch import nn, optim
+
+
 # comment these the next two lines out to disable Dask's cache
 cache = Cache(1e10)  # 10gb cache
 cache.register()
 
+# Training constants
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+NUM_EPOCHS = 20
+LEARNING_RATE = 1e-4 # Karpathy constant
+
+loss_fn = nn.MSELoss()
+
+
+def training(model, batch_generator,
+             optimizer,
+             reconst_loss_fn = loss_fn,
+             num_epochs: int = NUM_EPOCHS,
+             device = DEVICE
+             ):
+    for epoch in range(num_epochs):
+        
+        loop = tqdm(enumerate(batch_generator))
+        loop = tqdm(batch_generator, desc=f"Epoch [{epoch+1}/{num_epochs}]")
+        
+        
+        for i, (x, dates) in enumerate(loop):
+            # print(x.shape)
+            input = x[:, :2, :, :, :]
+            input= input.to(device)
+            
+            # input = input.squeeze(0).squeeze(1)
+            input = input.squeeze(0)
+            input = torch.nan_to_num(input, nan=0.0)
+            
+            
+            target = x[:, 2:, :, :, :]
+            target_for_now = target.squeeze(0)
+            
+            target_for_now = target_for_now[:2,:,:]
+            
+            target_for_now = torch.nan_to_num(target_for_now, nan=0.0)
+            
+            
+            # print(f"Input shape:{input.shape}")
+            
+            # predictions = model(input)[0]
+            x_recon, mu, sigma = model(input)
+            
+            reconst_loss = reconst_loss_fn(x_recon, target_for_now)
+            kl_div = -torch.sum(1+torch.log(sigma.pow(2))-mu.pow(2)-sigma.pow(2))
+
+            loss = reconst_loss + kl_div
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            loop.set_postfix(loss = loss.item())
+            
+      
 
 def print_json(obj):
     print(json.dumps(obj))
@@ -134,7 +192,7 @@ def custom_collate_fn(batch):
     # Default collate for tensors
     xs = default_collate(xs)
     # Keep dates as list or numpy arrays
-    return xs, list(dates)
+    return xs, dates[0]
 
 
 def main(
@@ -192,33 +250,59 @@ def main(
     t1 = time.time()
     print_json({"event": "setup end", "time": t1, "duration": t1 - t0})
 
-    for epoch in range(num_epochs):
-        e0 = time.time()
-        print_json({"event": "epoch start", "epoch": epoch, "time": e0})
+    model = VariationalAutoEncoder()
+    optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
+    
 
-        # for i, sample in enumerate(training_generator):
-        for i, (x, dates) in enumerate(training_generator):
-            print(x.shape)
-            input = x[:, :2, :, :, :]
-            target = x[:, 2:, :, :, :]
-            print(f"Input:{target.shape}")
-            # print(sample)
-            # print(sample.shape)
-            tt0 = time.time()
-            print_json({"event": "training start", "batch": i, "time": tt0})
-            time.sleep(train_step_time)  # simulate model training
-            tt1 = time.time()
-            print_json({"event": "training end", "batch": i, "time": tt1, "duration": tt1 - tt0})
-            if i == num_batches - 1:
-                break
+    training(model = model, 
+             optimizer=optimizer,
+            batch_generator = training_generator,
+            reconst_loss_fn = loss_fn,
+            num_epochs = num_epochs,
+            device = DEVICE
+        )
+    # for epoch in range(num_epochs):
+    #     e0 = time.time()
+    #     print_json({"event": "epoch start", "epoch": epoch, "time": e0})
 
-        e1 = time.time()
-        print_json({"event": "epoch end", "epoch": epoch, "time": e1, "duration": e1 - e0})
+    #     # for i, sample in enumerate(training_generator):
+        
+    #     for i, (x, dates) in enumerate(training_generator):
+    #         # print(x.shape)
+    #         input = x[:, :2, :, :, :]
+    #         input_dates = dates[:2]
+    #         target_dates = dates[2:]
+    #         target = x[:, 2:, :, :, :]
+            
+    #         # input = input.squeeze(0).squeeze(1)
+    #         input = input.squeeze(0)
+    #         target = target.squeeze(0).squeeze(1)
+            
+    #         target_for_now = target[:2,:,:]
+    #         print(f"Input shape:{input.shape}")
+            
+    #         predictions = model(input)[0]
 
-    run_finish_time = time.time()
-    print_json(
-        {"event": "run end", "time": run_finish_time, "duration": run_finish_time - run_start_time}
-    )
+    #         print(f"Prediction shape:{predictions.shape}")
+    #         # print(f"Tragte shape:{target_for_now.shape}")
+            
+    #         # print(sample)
+    #         # print(sample.shape)
+    #         tt0 = time.time()
+    #         print_json({"event": "training start", "batch": i, "time": tt0})
+    #         time.sleep(train_step_time)  # simulate model training
+    #         tt1 = time.time()
+    #         print_json({"event": "training end", "batch": i, "time": tt1, "duration": tt1 - tt0})
+    #         if i == num_batches - 1:
+    #             break
+
+    #     e1 = time.time()
+    #     print_json({"event": "epoch end", "epoch": epoch, "time": e1, "duration": e1 - e0})
+
+    # run_finish_time = time.time()
+    # print_json(
+    #     {"event": "run end", "time": run_finish_time, "duration": run_finish_time - run_start_time}
+    # )
 
 
 if __name__ == "__main__":

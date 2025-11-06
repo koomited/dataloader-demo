@@ -24,6 +24,7 @@ gcsfs = "*"
 
 [dev-packages]
 ipython = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.12"

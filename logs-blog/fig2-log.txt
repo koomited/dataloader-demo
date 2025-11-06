@@ -1,14 +1,353 @@
-{"event": "run start", "time": 1762366720.950744, "data_params": "{'batch_size': 1, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 1, "num_batches": 1, "batch_size": 1, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
-{"event": "setup start", "time": 1762366720.9507697}
-{"event": "get-batch start", "time": 1762366721.0627224, "idx": 26, "pid": 338481}
-{"event": "get-batch end", "time": 1762366721.0833883, "idx": 26, "pid": 338481, "duration": 0.020665884017944336}
-{"event": "setup end", "time": 1762366721.0845525, "duration": 0.13378286361694336}
-{"event": "epoch start", "epoch": 0, "time": 1762366721.084587}
-{"event": "get-batch start", "time": 1762366721.0848718, "idx": 7, "pid": 338481}
-{"event": "get-batch end", "time": 1762366721.1056113, "idx": 7, "pid": 338481, "duration": 0.02073955535888672}
-torch.Size([1, 10, 1, 252, 328])
-Input:torch.Size([1, 8, 1, 252, 328])
-{"event": "training start", "batch": 0, "time": 1762366721.1065764}
-{"event": "training end", "batch": 0, "time": 1762366721.2068634, "duration": 0.10028696060180664}
-{"event": "epoch end", "epoch": 0, "time": 1762366721.207047, "duration": 0.12245988845825195}
-{"event": "run end", "time": 1762366721.2070925, "duration": 0.2563486099243164}
+{"event": "run start", "time": 1762421769.2346025, "data_params": "{'batch_size': 1, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 100, "num_batches": 100, "batch_size": 1, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
+{"event": "setup start", "time": 1762421769.234624}
+{"event": "get-batch start", "time": 1762421769.328059, "idx": 27, "pid": 480559}
+{"event": "get-batch end", "time": 1762421769.3494892, "idx": 27, "pid": 480559, "duration": 0.021430253982543945}
+{"event": "setup end", "time": 1762421769.3505914, "duration": 0.1159675121307373}
+{"event": "get-batch start", "time": 1762421770.3560545, "idx": 13, "pid": 480559}
+{"event": "get-batch end", "time": 1762421770.375478, "idx": 13, "pid": 480559, "duration": 0.019423484802246094}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421772.0808532, "idx": 22, "pid": 480559}
+{"event": "get-batch end", "time": 1762421772.0972292, "idx": 22, "pid": 480559, "duration": 0.016376018524169922}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421773.1732795, "idx": 5, "pid": 480559}
+{"event": "get-batch end", "time": 1762421773.1894429, "idx": 5, "pid": 480559, "duration": 0.016163349151611328}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421774.2377582, "idx": 18, "pid": 480559}
+{"event": "get-batch end", "time": 1762421774.2546828, "idx": 18, "pid": 480559, "duration": 0.016924619674682617}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421775.3416247, "idx": 24, "pid": 480559}
+{"event": "get-batch end", "time": 1762421775.357379, "idx": 24, "pid": 480559, "duration": 0.015754222869873047}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421776.4962513, "idx": 16, "pid": 480559}
+{"event": "get-batch end", "time": 1762421776.5551374, "idx": 16, "pid": 480559, "duration": 0.058886051177978516}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421777.7193146, "idx": 11, "pid": 480559}
+{"event": "get-batch end", "time": 1762421777.7419195, "idx": 11, "pid": 480559, "duration": 0.022604942321777344}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421778.8521078, "idx": 2, "pid": 480559}
+{"event": "get-batch end", "time": 1762421778.87348, "idx": 2, "pid": 480559, "duration": 0.021372318267822266}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421780.0256736, "idx": 19, "pid": 480559}
+{"event": "get-batch end", "time": 1762421780.0439005, "idx": 19, "pid": 480559, "duration": 0.01822686195373535}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421781.1180673, "idx": 21, "pid": 480559}
+{"event": "get-batch end", "time": 1762421781.131993, "idx": 21, "pid": 480559, "duration": 0.013925790786743164}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421782.203295, "idx": 8, "pid": 480559}
+{"event": "get-batch end", "time": 1762421782.2582006, "idx": 8, "pid": 480559, "duration": 0.05490565299987793}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421783.344844, "idx": 20, "pid": 480559}
+{"event": "get-batch end", "time": 1762421783.36287, "idx": 20, "pid": 480559, "duration": 0.018025875091552734}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421784.4681907, "idx": 15, "pid": 480559}
+{"event": "get-batch end", "time": 1762421784.489579, "idx": 15, "pid": 480559, "duration": 0.02138829231262207}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421785.8063316, "idx": 1, "pid": 480559}
+{"event": "get-batch end", "time": 1762421785.8261986, "idx": 1, "pid": 480559, "duration": 0.019866943359375}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421786.9160829, "idx": 28, "pid": 480559}
+{"event": "get-batch end", "time": 1762421786.9341624, "idx": 28, "pid": 480559, "duration": 0.018079519271850586}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421788.042323, "idx": 26, "pid": 480559}
+{"event": "get-batch end", "time": 1762421788.0590363, "idx": 26, "pid": 480559, "duration": 0.01671314239501953}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421789.1476395, "idx": 7, "pid": 480559}
+{"event": "get-batch end", "time": 1762421789.1654942, "idx": 7, "pid": 480559, "duration": 0.017854690551757812}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421790.2872002, "idx": 9, "pid": 480559}
+{"event": "get-batch end", "time": 1762421790.3051665, "idx": 9, "pid": 480559, "duration": 0.017966270446777344}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421791.4356763, "idx": 27, "pid": 480559}
+{"event": "get-batch end", "time": 1762421791.4521585, "idx": 27, "pid": 480559, "duration": 0.016482114791870117}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421792.590736, "idx": 23, "pid": 480559}
+{"event": "get-batch end", "time": 1762421792.6112986, "idx": 23, "pid": 480559, "duration": 0.02056264877319336}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421793.7578392, "idx": 12, "pid": 480559}
+{"event": "get-batch end", "time": 1762421793.7760596, "idx": 12, "pid": 480559, "duration": 0.01822042465209961}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421794.9416587, "idx": 0, "pid": 480559}
+{"event": "get-batch end", "time": 1762421794.9620965, "idx": 0, "pid": 480559, "duration": 0.02043771743774414}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421796.1330724, "idx": 14, "pid": 480559}
+{"event": "get-batch end", "time": 1762421796.1551092, "idx": 14, "pid": 480559, "duration": 0.02203679084777832}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421797.3038998, "idx": 25, "pid": 480559}
+{"event": "get-batch end", "time": 1762421797.3225024, "idx": 25, "pid": 480559, "duration": 0.018602609634399414}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421798.5438535, "idx": 3, "pid": 480559}
+{"event": "get-batch end", "time": 1762421798.5633738, "idx": 3, "pid": 480559, "duration": 0.019520282745361328}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421799.7264516, "idx": 10, "pid": 480559}
+{"event": "get-batch end", "time": 1762421799.7449207, "idx": 10, "pid": 480559, "duration": 0.01846909523010254}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421800.8983119, "idx": 4, "pid": 480559}
+{"event": "get-batch end", "time": 1762421800.9167488, "idx": 4, "pid": 480559, "duration": 0.018436908721923828}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421802.0776856, "idx": 6, "pid": 480559}
+{"event": "get-batch end", "time": 1762421802.0951016, "idx": 6, "pid": 480559, "duration": 0.017416000366210938}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421803.2545962, "idx": 17, "pid": 480559}
+{"event": "get-batch end", "time": 1762421803.2759209, "idx": 17, "pid": 480559, "duration": 0.021324634552001953}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421804.5141294, "idx": 8, "pid": 480559}
+{"event": "get-batch end", "time": 1762421804.5311494, "idx": 8, "pid": 480559, "duration": 0.017019987106323242}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421805.6805942, "idx": 13, "pid": 480559}
+{"event": "get-batch end", "time": 1762421805.7018573, "idx": 13, "pid": 480559, "duration": 0.02126312255859375}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421806.9103787, "idx": 9, "pid": 480559}
+{"event": "get-batch end", "time": 1762421806.9320405, "idx": 9, "pid": 480559, "duration": 0.021661758422851562}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421808.0922759, "idx": 21, "pid": 480559}
+{"event": "get-batch end", "time": 1762421808.1104128, "idx": 21, "pid": 480559, "duration": 0.018136978149414062}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421809.2909558, "idx": 0, "pid": 480559}
+{"event": "get-batch end", "time": 1762421809.3090627, "idx": 0, "pid": 480559, "duration": 0.018106937408447266}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421810.4932516, "idx": 2, "pid": 480559}
+{"event": "get-batch end", "time": 1762421810.5163832, "idx": 2, "pid": 480559, "duration": 0.023131608963012695}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421811.6953769, "idx": 16, "pid": 480559}
+{"event": "get-batch end", "time": 1762421811.7150254, "idx": 16, "pid": 480559, "duration": 0.01964855194091797}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421812.8805494, "idx": 17, "pid": 480559}
+{"event": "get-batch end", "time": 1762421812.8971453, "idx": 17, "pid": 480559, "duration": 0.016595840454101562}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421814.0673764, "idx": 25, "pid": 480559}
+{"event": "get-batch end", "time": 1762421814.0863373, "idx": 25, "pid": 480559, "duration": 0.018960952758789062}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421815.2267246, "idx": 4, "pid": 480559}
+{"event": "get-batch end", "time": 1762421815.2450535, "idx": 4, "pid": 480559, "duration": 0.01832890510559082}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421816.3834739, "idx": 10, "pid": 480559}
+{"event": "get-batch end", "time": 1762421816.405925, "idx": 10, "pid": 480559, "duration": 0.022451162338256836}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421817.533993, "idx": 6, "pid": 480559}
+{"event": "get-batch end", "time": 1762421817.552699, "idx": 6, "pid": 480559, "duration": 0.018706083297729492}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421818.7012444, "idx": 22, "pid": 480559}
+{"event": "get-batch end", "time": 1762421818.7257178, "idx": 22, "pid": 480559, "duration": 0.02447342872619629}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421819.8650453, "idx": 5, "pid": 480559}
+{"event": "get-batch end", "time": 1762421819.8888805, "idx": 5, "pid": 480559, "duration": 0.023835182189941406}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421821.046831, "idx": 26, "pid": 480559}
+{"event": "get-batch end", "time": 1762421821.0651686, "idx": 26, "pid": 480559, "duration": 0.018337726593017578}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421822.3316915, "idx": 18, "pid": 480559}
+{"event": "get-batch end", "time": 1762421822.3566518, "idx": 18, "pid": 480559, "duration": 0.02496027946472168}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421823.6937983, "idx": 23, "pid": 480559}
+{"event": "get-batch end", "time": 1762421823.7154338, "idx": 23, "pid": 480559, "duration": 0.02163553237915039}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421825.0140023, "idx": 7, "pid": 480559}
+{"event": "get-batch end", "time": 1762421825.0372422, "idx": 7, "pid": 480559, "duration": 0.023239850997924805}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421826.2913554, "idx": 12, "pid": 480559}
+{"event": "get-batch end", "time": 1762421826.3108194, "idx": 12, "pid": 480559, "duration": 0.01946401596069336}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421827.5438251, "idx": 1, "pid": 480559}
+{"event": "get-batch end", "time": 1762421827.5626578, "idx": 1, "pid": 480559, "duration": 0.018832683563232422}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421828.7747765, "idx": 27, "pid": 480559}
+{"event": "get-batch end", "time": 1762421828.8013594, "idx": 27, "pid": 480559, "duration": 0.026582956314086914}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421830.009357, "idx": 14, "pid": 480559}
+{"event": "get-batch end", "time": 1762421830.0311787, "idx": 14, "pid": 480559, "duration": 0.02182173728942871}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421831.246352, "idx": 24, "pid": 480559}
+{"event": "get-batch end", "time": 1762421831.273659, "idx": 24, "pid": 480559, "duration": 0.02730703353881836}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421832.446003, "idx": 28, "pid": 480559}
+{"event": "get-batch end", "time": 1762421832.467408, "idx": 28, "pid": 480559, "duration": 0.02140498161315918}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421833.7369635, "idx": 15, "pid": 480559}
+{"event": "get-batch end", "time": 1762421833.7533913, "idx": 15, "pid": 480559, "duration": 0.01642775535583496}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421835.1284842, "idx": 3, "pid": 480559}
+{"event": "get-batch end", "time": 1762421835.1464634, "idx": 3, "pid": 480559, "duration": 0.017979145050048828}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421836.5226922, "idx": 11, "pid": 480559}
+{"event": "get-batch end", "time": 1762421836.5434463, "idx": 11, "pid": 480559, "duration": 0.020754098892211914}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421837.8581545, "idx": 20, "pid": 480559}
+{"event": "get-batch end", "time": 1762421837.8795297, "idx": 20, "pid": 480559, "duration": 0.021375179290771484}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421839.4051716, "idx": 19, "pid": 480559}
+{"event": "get-batch end", "time": 1762421839.434628, "idx": 19, "pid": 480559, "duration": 0.029456377029418945}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421841.0137577, "idx": 28, "pid": 480559}
+{"event": "get-batch end", "time": 1762421841.0342848, "idx": 28, "pid": 480559, "duration": 0.020527124404907227}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421842.3400924, "idx": 15, "pid": 480559}
+{"event": "get-batch end", "time": 1762421842.360574, "idx": 15, "pid": 480559, "duration": 0.020481586456298828}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421843.6079333, "idx": 27, "pid": 480559}
+{"event": "get-batch end", "time": 1762421843.626838, "idx": 27, "pid": 480559, "duration": 0.018904685974121094}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421844.7969484, "idx": 16, "pid": 480559}
+{"event": "get-batch end", "time": 1762421844.816435, "idx": 16, "pid": 480559, "duration": 0.019486665725708008}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421846.033352, "idx": 10, "pid": 480559}
+{"event": "get-batch end", "time": 1762421846.0532875, "idx": 10, "pid": 480559, "duration": 0.01993560791015625}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421847.2929077, "idx": 13, "pid": 480559}
+{"event": "get-batch end", "time": 1762421847.3097599, "idx": 13, "pid": 480559, "duration": 0.016852140426635742}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421848.5289772, "idx": 20, "pid": 480559}
+{"event": "get-batch end", "time": 1762421848.5496414, "idx": 20, "pid": 480559, "duration": 0.020664215087890625}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421849.7367399, "idx": 14, "pid": 480559}
+{"event": "get-batch end", "time": 1762421849.7561615, "idx": 14, "pid": 480559, "duration": 0.01942157745361328}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421850.910158, "idx": 9, "pid": 480559}
+{"event": "get-batch end", "time": 1762421850.9352229, "idx": 9, "pid": 480559, "duration": 0.025064945220947266}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421852.1089373, "idx": 18, "pid": 480559}
+{"event": "get-batch end", "time": 1762421852.1284215, "idx": 18, "pid": 480559, "duration": 0.019484281539916992}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421853.287226, "idx": 2, "pid": 480559}
+{"event": "get-batch end", "time": 1762421853.3142478, "idx": 2, "pid": 480559, "duration": 0.02702188491821289}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421854.4529188, "idx": 8, "pid": 480559}
+{"event": "get-batch end", "time": 1762421854.4763927, "idx": 8, "pid": 480559, "duration": 0.02347397804260254}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421855.647629, "idx": 4, "pid": 480559}
+{"event": "get-batch end", "time": 1762421855.6737723, "idx": 4, "pid": 480559, "duration": 0.026143312454223633}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421856.8485968, "idx": 19, "pid": 480559}
+{"event": "get-batch end", "time": 1762421856.870004, "idx": 19, "pid": 480559, "duration": 0.021407127380371094}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421858.0080462, "idx": 26, "pid": 480559}
+{"event": "get-batch end", "time": 1762421858.0323575, "idx": 26, "pid": 480559, "duration": 0.024311304092407227}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421859.179152, "idx": 3, "pid": 480559}
+{"event": "get-batch end", "time": 1762421859.2056956, "idx": 3, "pid": 480559, "duration": 0.026543617248535156}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421860.4007547, "idx": 5, "pid": 480559}
+{"event": "get-batch end", "time": 1762421860.4198534, "idx": 5, "pid": 480559, "duration": 0.019098758697509766}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421861.6384625, "idx": 0, "pid": 480559}
+{"event": "get-batch end", "time": 1762421861.6626408, "idx": 0, "pid": 480559, "duration": 0.024178266525268555}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421862.8225439, "idx": 1, "pid": 480559}
+{"event": "get-batch end", "time": 1762421862.8441854, "idx": 1, "pid": 480559, "duration": 0.02164149284362793}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421864.001761, "idx": 17, "pid": 480559}
+{"event": "get-batch end", "time": 1762421864.022531, "idx": 17, "pid": 480559, "duration": 0.02077007293701172}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421865.1619656, "idx": 12, "pid": 480559}
+{"event": "get-batch end", "time": 1762421865.1834366, "idx": 12, "pid": 480559, "duration": 0.021471023559570312}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421866.3414938, "idx": 6, "pid": 480559}
+{"event": "get-batch end", "time": 1762421866.365847, "idx": 6, "pid": 480559, "duration": 0.0243532657623291}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421867.553782, "idx": 25, "pid": 480559}
+{"event": "get-batch end", "time": 1762421867.580529, "idx": 25, "pid": 480559, "duration": 0.02674698829650879}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421868.7447727, "idx": 22, "pid": 480559}
+{"event": "get-batch end", "time": 1762421868.7658167, "idx": 22, "pid": 480559, "duration": 0.021044015884399414}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421869.913601, "idx": 23, "pid": 480559}
+{"event": "get-batch end", "time": 1762421869.9369123, "idx": 23, "pid": 480559, "duration": 0.023311376571655273}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421871.091975, "idx": 24, "pid": 480559}
+{"event": "get-batch end", "time": 1762421871.1085188, "idx": 24, "pid": 480559, "duration": 0.016543865203857422}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421872.2718616, "idx": 11, "pid": 480559}
+{"event": "get-batch end", "time": 1762421872.2935436, "idx": 11, "pid": 480559, "duration": 0.021682024002075195}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421873.4938703, "idx": 21, "pid": 480559}
+{"event": "get-batch end", "time": 1762421873.5189533, "idx": 21, "pid": 480559, "duration": 0.025083065032958984}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421874.6415162, "idx": 7, "pid": 480559}
+{"event": "get-batch end", "time": 1762421874.6583786, "idx": 7, "pid": 480559, "duration": 0.01686239242553711}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421875.8295841, "idx": 20, "pid": 480559}
+{"event": "get-batch end", "time": 1762421875.845844, "idx": 20, "pid": 480559, "duration": 0.01625990867614746}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421877.051321, "idx": 8, "pid": 480559}
+{"event": "get-batch end", "time": 1762421877.0771508, "idx": 8, "pid": 480559, "duration": 0.025829792022705078}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421878.3164186, "idx": 9, "pid": 480559}
+{"event": "get-batch end", "time": 1762421878.3362017, "idx": 9, "pid": 480559, "duration": 0.01978302001953125}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421879.4699597, "idx": 10, "pid": 480559}
+{"event": "get-batch end", "time": 1762421879.4933803, "idx": 10, "pid": 480559, "duration": 0.02342057228088379}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421880.6556315, "idx": 6, "pid": 480559}
+{"event": "get-batch end", "time": 1762421880.68014, "idx": 6, "pid": 480559, "duration": 0.02450847625732422}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421881.8241947, "idx": 28, "pid": 480559}
+{"event": "get-batch end", "time": 1762421881.848085, "idx": 28, "pid": 480559, "duration": 0.023890256881713867}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421882.996855, "idx": 13, "pid": 480559}
+{"event": "get-batch end", "time": 1762421883.0216584, "idx": 13, "pid": 480559, "duration": 0.02480340003967285}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421884.1868339, "idx": 4, "pid": 480559}
+{"event": "get-batch end", "time": 1762421884.201917, "idx": 4, "pid": 480559, "duration": 0.015083074569702148}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421885.3714988, "idx": 19, "pid": 480559}
+{"event": "get-batch end", "time": 1762421885.394254, "idx": 19, "pid": 480559, "duration": 0.022755146026611328}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421886.5693724, "idx": 25, "pid": 480559}
+{"event": "get-batch end", "time": 1762421886.588049, "idx": 25, "pid": 480559, "duration": 0.0186765193939209}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421887.8267086, "idx": 22, "pid": 480559}
+{"event": "get-batch end", "time": 1762421887.841081, "idx": 22, "pid": 480559, "duration": 0.01437234878540039}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421888.9988914, "idx": 7, "pid": 480559}
+{"event": "get-batch end", "time": 1762421889.0181444, "idx": 7, "pid": 480559, "duration": 0.019253015518188477}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421890.1937425, "idx": 24, "pid": 480559}
+{"event": "get-batch end", "time": 1762421890.213141, "idx": 24, "pid": 480559, "duration": 0.01939845085144043}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421891.3915772, "idx": 3, "pid": 480559}
+{"event": "get-batch end", "time": 1762421891.417762, "idx": 3, "pid": 480559, "duration": 0.026184797286987305}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421892.5765772, "idx": 21, "pid": 480559}
+{"event": "get-batch end", "time": 1762421892.5919108, "idx": 21, "pid": 480559, "duration": 0.01533365249633789}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421893.7775629, "idx": 14, "pid": 480559}
+{"event": "get-batch end", "time": 1762421893.7971816, "idx": 14, "pid": 480559, "duration": 0.019618749618530273}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421894.9516673, "idx": 2, "pid": 480559}
+{"event": "get-batch end", "time": 1762421894.9669144, "idx": 2, "pid": 480559, "duration": 0.015247106552124023}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421896.1099133, "idx": 17, "pid": 480559}
+{"event": "get-batch end", "time": 1762421896.123704, "idx": 17, "pid": 480559, "duration": 0.013790607452392578}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421897.303191, "idx": 1, "pid": 480559}
+{"event": "get-batch end", "time": 1762421897.3153126, "idx": 1, "pid": 480559, "duration": 0.01212167739868164}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421898.4556022, "idx": 12, "pid": 480559}
+{"event": "get-batch end", "time": 1762421898.4693673, "idx": 12, "pid": 480559, "duration": 0.013765096664428711}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421899.6436062, "idx": 16, "pid": 480559}
+{"event": "get-batch end", "time": 1762421899.668708, "idx": 16, "pid": 480559, "duration": 0.025101900100708008}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421900.830576, "idx": 27, "pid": 480559}
+{"event": "get-batch end", "time": 1762421900.8575132, "idx": 27, "pid": 480559, "duration": 0.026937246322631836}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421902.0153077, "idx": 5, "pid": 480559}
+{"event": "get-batch end", "time": 1762421902.0324235, "idx": 5, "pid": 480559, "duration": 0.01711583137512207}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421903.1909204, "idx": 11, "pid": 480559}
+{"event": "get-batch end", "time": 1762421903.2074633, "idx": 11, "pid": 480559, "duration": 0.016542911529541016}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421904.360559, "idx": 15, "pid": 480559}
+{"event": "get-batch end", "time": 1762421904.383282, "idx": 15, "pid": 480559, "duration": 0.022722959518432617}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421905.536171, "idx": 18, "pid": 480559}
+{"event": "get-batch end", "time": 1762421905.5510743, "idx": 18, "pid": 480559, "duration": 0.01490330696105957}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421906.7249372, "idx": 26, "pid": 480559}
+{"event": "get-batch end", "time": 1762421906.7415602, "idx": 26, "pid": 480559, "duration": 0.01662302017211914}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421907.8454332, "idx": 23, "pid": 480559}
+{"event": "get-batch end", "time": 1762421907.8723767, "idx": 23, "pid": 480559, "duration": 0.026943445205688477}
+model torch.Size([2, 20, 244, 320])
+{"event": "get-batch start", "time": 1762421909.3087218, "idx": 0, "pid": 480559}
+{"event": "get-batch end", "time": 1762421909.3242192, "idx": 0, "pid": 480559, "duration": 0.015497446060180664}
+model torch.Size([2, 20, 244, 320])
