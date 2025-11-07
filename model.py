@@ -54,7 +54,6 @@ class VariationalAutoEncoder(nn.Module):
         x = self.conv2_drop(x)
         # x = F.max_pool2d(x, 2)
         x = F.relu(x)
-        print("model", x.shape)
 
         # linear fully connected layers
         x = x.view(-1, 20*244*320)
@@ -85,3 +84,12 @@ class VariationalAutoEncoder(nn.Module):
         z_reparametrized = mu + sigma*epsilon
         x_reconstructed = self.decode(z_reparametrized)
         return x_reconstructed, mu, sigma
+    
+    
+def rollout(model, input, roulout_step: int = 4):
+    
+    for i in range(roulout_step):
+        print(f'Rollout step {i+1}')
+        x_recon, mu, sigma = model(input)
+        input = x_recon
+    return x_recon, mu, sigma

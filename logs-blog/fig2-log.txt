@@ -1,35 +1,5 @@
-{"event": "run start", "time": 1762431830.597793, "data_params": "{'batch_size': 1, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 100, "num_batches": 100, "batch_size": 1, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
-{"event": "setup start", "time": 1762431830.5978148}
-{"event": "get-batch start", "time": 1762431830.7335348, "idx": 1, "pid": 548161}
-{"event": "get-batch end", "time": 1762431830.7806108, "idx": 1, "pid": 548161, "duration": 0.04707598686218262}
-{"event": "setup end", "time": 1762431830.7842805, "duration": 0.18646574020385742}
-{"event": "get-batch start", "time": 1762431832.0444767, "idx": 2, "pid": 548161}
-{"event": "get-batch end", "time": 1762431832.074969, "idx": 2, "pid": 548161, "duration": 0.030492305755615234}
-Input shape: torch.Size([32, 1, 252, 328])
-Target shape: torch.Size([32, 1, 252, 328])
-model torch.Size([32, 20, 244, 320])
-{"event": "get-batch start", "time": 1762431836.3203056, "idx": 1, "pid": 548161}
-{"event": "get-batch end", "time": 1762431836.349314, "idx": 1, "pid": 548161, "duration": 0.02900838851928711}
-Input shape: torch.Size([32, 1, 252, 328])
-Target shape: torch.Size([32, 1, 252, 328])
-model torch.Size([32, 20, 244, 320])
-{"event": "get-batch start", "time": 1762431840.9948487, "idx": 0, "pid": 548161}
-{"event": "get-batch end", "time": 1762431841.094501, "idx": 0, "pid": 548161, "duration": 0.09965229034423828}
-Input shape: torch.Size([32, 1, 252, 328])
-Target shape: torch.Size([32, 1, 252, 328])
-model torch.Size([32, 20, 244, 320])
-{"event": "get-batch start", "time": 1762431845.189842, "idx": 1, "pid": 548161}
-{"event": "get-batch end", "time": 1762431845.2807324, "idx": 1, "pid": 548161, "duration": 0.09089040756225586}
-Input shape: torch.Size([32, 1, 252, 328])
-Target shape: torch.Size([32, 1, 252, 328])
-model torch.Size([32, 20, 244, 320])
-{"event": "get-batch start", "time": 1762431850.4460723, "idx": 0, "pid": 548161}
-{"event": "get-batch end", "time": 1762431850.5344296, "idx": 0, "pid": 548161, "duration": 0.08835721015930176}
-Input shape: torch.Size([32, 1, 252, 328])
-Target shape: torch.Size([32, 1, 252, 328])
-model torch.Size([32, 20, 244, 320])
-{"event": "get-batch start", "time": 1762431855.5766077, "idx": 2, "pid": 548161}
-{"event": "get-batch end", "time": 1762431855.722992, "idx": 2, "pid": 548161, "duration": 0.14638423919677734}
-Input shape: torch.Size([32, 1, 252, 328])
-Target shape: torch.Size([32, 1, 252, 328])
-model torch.Size([32, 20, 244, 320])
+{"event": "run start", "time": 1762545405.8971539, "data_params": "{'batch_size': 1, 'shuffle': True}", "locals": {"source": "local_nc", "num_epochs": 1, "num_batches": 1, "batch_size": 1, "shuffle": true, "num_workers": null, "prefetch_factor": null, "persistent_workers": null, "pin_memory": null, "train_step_time": 0.1, "dask_threads": null, "local_path": "../4cc5140f-16ff-4bdd-ba65-cbb1192da7ad.nc"}}
+{"event": "setup start", "time": 1762545405.8971848}
+{"event": "get-batch start", "time": 1762545406.0150526, "idx": 2, "pid": 115643}
+{"event": "get-batch end", "time": 1762545406.0585246, "idx": 2, "pid": 115643, "duration": 0.0434720516204834}
+{"event": "setup end", "time": 1762545406.0624578, "duration": 0.16527295112609863}

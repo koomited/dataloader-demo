@@ -14,6 +14,7 @@ from torch import multiprocessing
 from typing_extensions import Annotated
 from torch.utils.data._utils.collate import default_collate
 
+from model import rollout
 
 from dask.cache import Cache
 
@@ -58,19 +59,21 @@ def training(model, batch_generator,
             
             target = x[1::2, :, :, :]
             
-            print(f"Input shape: {input.shape}")
-            print(f"Target shape: {target.shape}")
+            # print(f                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "Input shape: {input.shape}")
+            # print(f"Target shape: {target.shape}")
             # target_for_now = target.squeeze(0)
             
             # target_for_now = target_for_now[:2,:,:]
             
             target = torch.nan_to_num(target, nan=0.0)
             
-            
+            # Trying rollout
+            x_recon, mu, sigma = rollout(model, input)
             # print(f"Input shape:{input.shape}")
             
             # predictions = model(input)[0]
-            x_recon, mu, sigma = model(input)
+            # x_recon, mu, sigma = model(input)
+            # print(x_recon.shape)
             
             reconst_loss = reconst_loss_fn(x_recon, target)
             kl_div = -torch.sum(1+torch.log(sigma.pow(2))-mu.pow(2)-sigma.pow(2))
